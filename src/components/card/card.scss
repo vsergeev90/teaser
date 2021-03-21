@@ -64,6 +64,7 @@ $xl-width-min: 1200px;
 
   &-link {
     text-decoration: none;
+    pointer-events: none;
     color: $main;
   }
 

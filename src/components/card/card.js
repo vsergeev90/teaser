@@ -4,18 +4,21 @@ import './card.scss';
 const Card = ({ data }) => {
   const { title, subtitle, link, image } = data;
 
+  const clickCard = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const t = e.target;
+    const link = t.querySelector('.card-link').getAttribute('href');
+
+    window.location.href = link;
+  };
+
   return (
     <div className="card">
       <figure>
         <img src={image} alt="alt text" />
-        <figcaption
-          onClick={(e) => {
-            const t = e.target;
-            const link = t.querySelector('.card-link').getAttribute('href');
-
-            window.location.href = link;
-          }}
-        >
+        <figcaption onClick={clickCard}>
           <div className="arrow">
             <span></span>
           </div>
