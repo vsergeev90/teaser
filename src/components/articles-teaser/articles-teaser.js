@@ -13,7 +13,7 @@ const ArticlesTeaser = ({ data }) => {
   return (
     <section>
       <Title title={'Latest News and Projects'} />
-      <div className="teaser-wrapper">{cardsMount}</div>
+      <div className="card-wrapper">{cardsMount}</div>
       <Button />
     </section>
   );

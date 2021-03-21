@@ -19,9 +19,9 @@ const Card = ({ data }) => {
       <figure>
         <img src={image} alt="alt text" />
         <figcaption onClick={clickCard}>
-          <div className="arrow">
+          <i className="card-arrow">
             <span></span>
-          </div>
+          </i>
           <h3 className="card-title">
             <a href={link} className="card-link">
               {title}

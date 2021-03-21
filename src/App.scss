@@ -1,3 +1,13 @@
+// COLORS
+$white: #fff;
+$black: #171819;
+$main: #003087;
+$secondary: #41b6e6;
+
+//BREAKPOINTS
+$lg-width-min: 992px;
+$xl-width-min: 1200px;
+
 html {
   box-sizing: border-box;
 }
@@ -6,20 +16,25 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Open Sans, sans-serif;
+
+  * {
+    margin: 0;
+  }
 }
 
 p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #171819;
+  color: $black;
   font-weight: 300;
 }
 
 .container {
-  margin: 1rem 16px;
+  margin: 1rem;
 
-  @media (min-width: 992px) {
+  @media (min-width: $lg-width-min) {
     margin: 0 auto;
     max-width: 1400px;
+    padding: 0 1rem;
   }
 }

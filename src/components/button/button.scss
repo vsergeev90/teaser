@@ -1,6 +1,13 @@
+// COLORS
 $white: #fff;
 $main: #003087;
 $secondary: #41b6e6;
+
+// SPACING
+
+//BREAKPOINTS
+$lg-width-min: 992px;
+$xl-width-min: 1200px;
 
 $text-arrow-space: 16px;
 $shaft-width: 1px;
@@ -10,187 +17,57 @@ $arrow-head-width: 8px;
 $arrow-head-thickness: $shaft-thickness;
 
 .explore-button {
-  list-style-type: none;
-  padding: 12px 22px;
-  border-radius: 24px;
-  border: 1px solid transparent;
-  background-color: $main;
-  width: 135px;
-  margin: 1rem auto;
-  transition: background-color ease 0.3s;
+  text-align: center;
 
-  &:hover {
-    background-color: $secondary;
-  }
-}
-
-.the-arrow {
-  width: $shaft-width;
-  transition: all 0.3s;
-
-  &.-left {
-    position: absolute;
-    top: 50%;
-    left: 0;
-
-    > .shaft {
-      width: 0;
-      background-color: $white;
-
-      &:before,
-      &:after {
-        width: 0;
-        background-color: $white;
-      }
-
-      &:before {
-        transform: rotate(0);
-      }
-
-      &:after {
-        transform: rotate(0);
-      }
-    }
-  }
-
-  &.-right {
-    top: 1px;
-
-    > .shaft {
-      width: $shaft-width;
-      transition-delay: 0.2s;
-
-      &:before,
-      &:after {
-        width: $arrow-head-width;
-        transition-delay: 0.3s;
-        transition: all 0.5s;
-      }
-
-      &:before {
-        transform: rotate(40deg);
-      }
-
-      &:after {
-        transform: rotate(-40deg);
-      }
-    }
-  }
-
-  > .shaft {
-    background-color: $white;
-    display: block;
-    height: $shaft-thickness;
+  a {
+    display: inline-block;
     position: relative;
-    transition: all 0.3s;
-    transition-delay: 0;
-    will-change: transform;
+    width: auto;
+    margin: 1rem 0;
+    padding: 12px 45px 12px 22px;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    background-color: $main;
+    color: $white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color ease 0.3s;
 
-    &:before,
-    &:after {
-      background-color: $white;
-      content: '';
-      display: block;
-      height: $arrow-head-thickness;
+    &:hover {
+      background-color: $secondary;
+    }
+
+    .arrow {
       position: absolute;
-      top: 0;
-      right: 0;
-      transition: all 0.3s;
-      transition-delay: 0;
-    }
+      top: 20px;
+      width: 17px;
+      height: 2px;
+      right: 15px;
+      background-color: #fff;
 
-    &:before {
-      transform-origin: top right;
-    }
-
-    &:after {
-      transform-origin: bottom right;
-    }
-  }
-}
-
-// Animated Arrow Button
-
-.animated-arrow {
-  display: inline-block;
-  color: $white;
-  font-size: 1.25em;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.3s;
-
-  &:hover {
-    > .the-arrow.-left {
-      > .shaft {
-        width: $newshaft-width;
-        transition-delay: 0.1s;
-        background-color: $white;
-
-        &:before,
-        &:after {
-          width: $arrow-head-width;
-          transition-delay: 0.1s;
-          background-color: $white;
-        }
-
-        &:before {
-          transform: rotate(40deg);
-        }
-
-        &:after {
-          transform: rotate(-40deg);
-        }
-      }
-    }
-
-    > .main {
-      transform: translateX($shaft-width + $text-arrow-space);
-      transform: translateX(20px);
-
-      .text {
-        color: $white;
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 2px;
+        right: -2px;
+        background-color: #fff;
       }
 
-      > .the-arrow.-right {
-        > .shaft {
-          width: 0;
-          transform: translateX(200%);
-          transition-delay: 0;
+      &::after {
+        top: -4px;
+        transform: rotate(45deg);
+      }
 
-          &:before,
-          &:after {
-            width: 0;
-            transition-delay: 0;
-            transition: all 0.1s;
-          }
-
-          &:before {
-            transform: rotate(0);
-          }
-
-          &:after {
-            transform: rotate(0);
-          }
-        }
+      &::before {
+        top: 4px;
+        transform: rotate(-45deg);
       }
     }
   }
 
-  > .main {
-    display: flex;
-    align-items: center;
-    transition: all 0.3s;
-
-    > .text {
-      margin: 0 $text-arrow-space 0 0;
-      line-height: 1;
-      color: $white;
-      transition: color ease 0.3s;
-      text-transform: lowercase;
-    }
-
-    > .the-arrow {
-      position: relative;
-    }
+  @media (min-width: $lg-width-min) {
+    margin: 2rem 0;
   }
 }
