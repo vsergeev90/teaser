@@ -1,12 +1,4 @@
-// COLORS
-$white: #fff;
-$black: #171819;
-$main: #003087;
-$secondary: #41b6e6;
-
-//BREAKPOINTS
-$lg-width-min: 992px;
-$xl-width-min: 1200px;
+@import '../../variables.scss';
 
 .card-wrapper {
   display: flex;

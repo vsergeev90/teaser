@@ -1,20 +1,4 @@
-// COLORS
-$white: #fff;
-$main: #003087;
-$secondary: #41b6e6;
-
-// SPACING
-
-//BREAKPOINTS
-$lg-width-min: 992px;
-$xl-width-min: 1200px;
-
-$text-arrow-space: 16px;
-$shaft-width: 1px;
-$newshaft-width: 18px;
-$shaft-thickness: 1px;
-$arrow-head-width: 8px;
-$arrow-head-thickness: $shaft-thickness;
+@import '../../variables.scss';
 
 .explore-button {
   text-align: center;
