@@ -1,0 +1,23 @@
+// COLORS
+$white: #fff;
+$main: #003087;
+$secondary: #41b6e6;
+
+// SPACING
+
+//BREAKPOINTS
+$lg-width-min: 992px;
+$xl-width-min: 1200px;
+
+.teaser-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (min-width: $lg-width-min) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
