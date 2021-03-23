@@ -6,19 +6,14 @@
   margin-bottom: 1rem;
 
   &-title {
-    display: none;
     color: $main;
     overflow: hidden;
     font-size: 1.2rem;
     text-transform: uppercase;
-    animation: fadeIn ease 1s;
-    animation-fill-mode: forwards;
   }
 
   &-subtitle {
-    display: none;
-    animation: fadeIn ease 1s;
-    animation-fill-mode: forwards;
+    overflow: hidden;
   }
 
   &-link {
@@ -45,8 +40,12 @@
     bottom: 0;
     padding: 10px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $bg-color;
     transition: all 0.3s ease-in-out;
+
+    &:focus-within {
+      outline: 1px solid $black;
+    }
 
     &:before {
       content: '';
@@ -55,7 +54,7 @@
       height: 0;
       border-left: 20px solid transparent;
       border-right: 20px solid transparent;
-      border-bottom: 20px solid rgba(255, 255, 255, 0.8);
+      border-bottom: 20px solid $bg-color;
       position: absolute;
       top: -20px;
       left: 0;
@@ -64,7 +63,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     cursor: pointer;
 
     .card-arrow {
@@ -79,11 +79,6 @@
         content: '';
         display: block;
         border-bottom: 0;
-      }
-
-      .card-title,
-      .card-subtitle {
-        display: block;
       }
     }
   }
@@ -145,15 +140,6 @@
     &-link {
       -webkit-line-clamp: 6;
     }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

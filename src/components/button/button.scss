@@ -21,6 +21,10 @@
       background-color: $secondary;
     }
 
+    &:focus {
+      outline: 1px solid $black;
+    }
+
     .arrow {
       position: absolute;
       top: 20px;

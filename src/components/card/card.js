@@ -9,7 +9,11 @@ const Card = ({ data }) => {
     e.stopPropagation();
 
     const t = e.target;
-    const link = t.querySelector('.card-link').getAttribute('href');
+    console.log(t);
+    const link =
+      t.className === 'card-link'
+        ? t.getAttribute('href')
+        : t.querySelector('.card-link').getAttribute('href');
 
     window.location.href = link;
   };
